@@ -1,5 +1,7 @@
 //Dependencies
-require("dotenv").config()
+//require("dotenv").config()
+import { config } from "dotenv";
+config();
 const { PORT = 3000, DATABASE_URL }:any = process.env;
 import express, { Request, Response } from "express"
 import mongoose from "mongoose";
@@ -8,7 +10,8 @@ import cors from "cors";
 import morgan from "morgan";
 
 //Database Connection
-mongoose.connect(DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL!);
+
 //Connection Events
 mongoose.connection
   .on("open", () => console.log("You are connected to mongoose"))
