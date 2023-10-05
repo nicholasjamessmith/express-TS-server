@@ -10,7 +10,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 //Database Connection
-mongoose.connect(process.env.DATABASE_URL!);
+mongoose.connect(DATABASE_URL);
 
 //Connection Events
 mongoose.connection
